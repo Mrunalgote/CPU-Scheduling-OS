@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        OptimaOS — CPU Scheduling Lab
+    </title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                OS
+            </div>
+
+            <div class="brand-text">
+
+                <strong>
+                    OptimaOS
+                </strong>
+
+                <span>
+                    CPU Scheduling Lab
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">
+                WORKSPACE
+            </p>
+
+
+            <a
+                href="#dashboardSection"
+                class="nav-item active"
+            >
+
+                <i class="fa-solid fa-grid-2"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="#schedulingSection"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-microchip"></i>
+
+                <span>
+                    CPU Scheduling
+                </span>
+
+            </a>
+
+
+            <a
+                href="#algorithmsSection"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-code-branch"></i>
+
+                <span>
+                    Algorithms
+                </span>
+
+            </a>
+
+
+            <a
+                href="#analyticsSection"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <span>
+                    Analytics
+                </span>
+
+            </a>
+
+
+            <a
+                href="#historySection"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Simulation History
+                </span>
+
+            </a>
+
+
+            <a
+                href="#systemSection"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-server"></i>
+
+                <span>
+                    System Status
+                </span>
+
+            </a>
+
+
+            <p class="nav-label nav-label-bottom">
+                INFORMATION
+            </p>
+
+
+            <a
+                href="#aboutSection"
+                class="nav-item"
+            >
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    About OptimaOS
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="system-dot"></div>
+
+            <div>
+
+                <strong>
+                    System Online
+                </strong>
+
+                <span>
+                    Simulation engine ready
+                </span>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="breadcrumb">
+                    Operating Systems
+                </span>
+
+                <span class="breadcrumb-separator">
+                    /
+                </span>
+
+                <strong>
+                    CPU Scheduler
+                </strong>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="live-status">
+
+                    <span class="live-dot"></span>
+
+                    Live Simulation
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        OS
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Student Lab
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
+
+        <section
+            class="dashboard-section hero-section"
+            id="dashboardSection"
+        >
+
+            <div class="hero-content">
+
+                <p class="section-kicker">
+                    CPU SCHEDULING LAB
+                </p>
+
+                <h1>
+                    Understand your CPU.
+                    <br>
+                    <span>
+                        Control every process.
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Visualize how operating system scheduling
+                    algorithms manage processes, allocate CPU
+                    time and optimize system performance.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary-button"
+                        id="runSimulation"
+                    >
+
+                        <i class="fa-solid fa-play"></i>
+
+                        Run Simulation
+
+                    </button>
+
+
+                    <button
+                        class="secondary-button"
+                        id="resetSimulation"
+                    >
+
+                        <i class="fa-solid fa-rotate-right"></i>
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="cpu-visual">
+
+                <div class="cpu-ring ring-one"></div>
+
+                <div class="cpu-ring ring-two"></div>
+
+                <div class="cpu-ring ring-three"></div>
+
+
+                <div class="cpu-core">
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <span>
+                        CPU
+                    </span>
+
+                </div>
+
+
+                <div class="process-orbit process-one">
+                    P1
+                </div>
+
+                <div class="process-orbit process-two">
+                    P2
+                </div>
+
+                <div class="process-orbit process-three">
+                    P3
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             KPI CARDS
+             ================================================= -->
+
+        <section class="metrics-grid">
+
+            <div class="metric-card">
+
+                <div class="metric-icon blue">
+
+                    <i class="fa-solid fa-hourglass-half"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        AVG. WAITING
+                    </span>
+
+                    <strong id="avgWaiting">
+                        0.00
+                    </strong>
+
+                    <small>
+                        time units
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon purple">
+
+                    <i class="fa-solid fa-stopwatch"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        AVG. TURNAROUND
+                    </span>
+
+                    <strong id="avgTurnaround">
+                        0.00
+                    </strong>
+
+                    <small>
+                        time units
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon green">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        CPU UTILIZATION
+                    </span>
+
+                    <strong id="cpuUtilization">
+                        0%
+                    </strong>
+
+                    <small>
+                        processor efficiency
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="metric-card">
+
+                <div class="metric-icon orange">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        THROUGHPUT
+                    </span>
+
+                    <strong id="throughput">
+                        0.00
+                    </strong>
+
+                    <small>
+                        processes / unit
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CPU SCHEDULING
+             ================================================= -->
+
+        <section
+            class="dashboard-section"
+            id="schedulingSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        SIMULATION CONTROL
+                    </p>
+
+                    <h2>
+                        Scheduling Controller
+                    </h2>
+
+                </div>
+
+                <div
+                    class="scheduler-status"
+                    id="schedulerStatus"
+                >
+
+                    <span></span>
+
+                    Ready
+
+                </div>
+
+            </div>
+
+
+            <div class="controller-card">
+
+                <div class="control-group">
+
+                    <label>
+                        Scheduling Algorithm
+                    </label>
+
+                    <select id="algorithmSelect">
+
+                        <option value="FCFS">
+                            First Come First Serve
+                        </option>
+
+                        <option value="SJF">
+                            Shortest Job First
+                        </option>
+
+                        <option value="SRTF">
+                            Shortest Remaining Time First
+                        </option>
+
+                        <option value="RR">
+                            Round Robin
+                        </option>
+
+                        <option value="PRIORITY">
+                            Priority Scheduling
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="control-group">
+
+                    <label>
+                        Time Quantum
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantumInput"
+                        min="1"
+                        value="2"
+                    >
+
+                </div>
+
+
+                <div class="control-group speed-control">
+
+                    <label>
+                        Simulation Speed
+
+                        <span id="speedValue">
+                            500 ms
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="range"
+                        id="speedInput"
+                        min="100"
+                        max="1500"
+                        value="500"
+                        step="100"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROCESS MANAGER
+             ================================================= -->
+
+        <section
+            class="dashboard-section"
+            id="algorithmsSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        PROCESS MANAGEMENT
+                    </p>
+
+                    <h2>
+                        Process Manager
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="small-button"
+                    id="addProcess"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Process
+
+                </button>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <table class="process-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                PID
+                            </th>
+
+                            <th>
+                                Arrival
+                            </th>
+
+                            <th>
+                                Burst
+                            </th>
+
+                            <th>
+                                Priority
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="processTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GANTT CHART
+             ================================================= -->
+
+        <section class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        EXECUTION TIMELINE
+                    </p>
+
+                    <h2>
+                        CPU Gantt Chart
+                    </h2>
+
+                </div>
+
+                <span class="section-note">
+                    Real-time execution sequence
+                </span>
+
+            </div>
+
+
+            <div class="gantt-card">
+
+                <div
+                    class="gantt-container"
+                    id="ganttContainer"
+                >
+
+                    <div class="gantt-empty">
+
+                        <i class="fa-solid fa-chart-gantt"></i>
+
+                        <span>
+                            Run a simulation to visualize
+                            CPU execution.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ANALYTICS
+             ================================================= -->
+
+        <section
+            class="dashboard-section"
+            id="analyticsSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        PERFORMANCE INSIGHTS
+                    </p>
+
+                    <h2>
+                        Analytics
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-grid">
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <h3>
+                                Scheduling Performance
+                            </h3>
+
+                            <span>
+                                Waiting vs turnaround time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-wrapper">
+
+                        <canvas
+                            id="performanceChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+
+                            <h3>
+                                CPU Utilization
+                            </h3>
+
+                            <span>
+                                Busy vs idle processor time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-wrapper doughnut-wrapper">
+
+                        <canvas
+                            id="cpuChart"
+                        ></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SIMULATION HISTORY
+             ================================================= -->
+
+        <section
+            class="dashboard-section"
+            id="historySection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        ACTIVITY LOG
+                    </p>
+
+                    <h2>
+                        Simulation History
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="outline-button"
+                    id="clearHistory"
+                >
+
+                    <i class="fa-solid fa-trash-can"></i>
+
+                    Clear History
+
+                </button>
+
+            </div>
+
+
+            <div class="history-card">
+
+
+                <!-- HISTORY SUMMARY -->
+
+                <div class="history-summary">
+
+
+                    <div class="history-summary-item">
+
+                        <div class="history-summary-icon blue">
+
+                            <i class="fa-solid fa-list-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                TOTAL SIMULATIONS
+                            </span>
+
+                            <strong id="totalSimulations">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="history-summary-item">
+
+                        <div class="history-summary-icon purple">
+
+                            <i class="fa-solid fa-code-branch"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ALGORITHMS USED
+                            </span>
+
+                            <strong id="algorithmsUsed">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="history-summary-item">
+
+                        <div class="history-summary-icon green">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                LATEST RUN
+                            </span>
+
+                            <strong id="latestRun">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- HISTORY TABLE -->
+
+                <div class="history-table-wrapper">
+
+                    <table class="history-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Simulation
+                                </th>
+
+                                <th>
+                                    Algorithm
+                                </th>
+
+                                <th>
+                                    Date & Time
+                                </th>
+
+                                <th>
+                                    Processes
+                                </th>
+
+                                <th>
+                                    Avg. Waiting
+                                </th>
+
+                                <th>
+                                    CPU
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Details
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="historyTableBody">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="history-empty"
+                    id="historyEmpty"
+                >
+
+                    <div class="history-empty-icon">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    </div>
+
+                    <h3>
+                        No simulation history
+                    </h3>
+
+                    <p>
+                        Run a simulation and its results
+                        will automatically appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SYSTEM STATUS
+             ================================================= -->
+
+        <section
+            class="dashboard-section"
+            id="systemSection"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="section-kicker">
+                        SYSTEM MONITORING
+                    </p>
+
+                    <h2>
+                        System Status
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="status-grid">
+
+
+                <div class="status-card">
+
+                    <div class="status-card-icon">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CPU Scheduler
+                        </span>
+
+                        <strong>
+                            Operational
+                        </strong>
+
+                    </div>
+
+                    <div class="status-indicator active"></div>
+
+                </div>
+
+
+                <div class="status-card">
+
+                    <div class="status-card-icon">
+
+                        <i class="fa-solid fa-memory"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Process Manager
+                        </span>
+
+                        <strong>
+                            Operational
+                        </strong>
+
+                    </div>
+
+                    <div class="status-indicator active"></div>
+
+                </div>
+
+
+                <div class="status-card">
+
+                    <div class="status-card-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Analytics Engine
+                        </span>
+
+                        <strong>
+                            Operational
+                        </strong>
+
+                    </div>
+
+                    <div class="status-indicator active"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT
+             ================================================= -->
+
+        <section
+            class="dashboard-section about-section"
+            id="aboutSection"
+        >
+
+            <div class="about-card">
+
+                <div class="about-logo">
+                    OS
+                </div>
+
+                <div>
+
+                    <p class="section-kicker">
+                        ABOUT OPTIMAOS
+                    </p>
+
+                    <h2>
+                        A visual CPU scheduling laboratory.
+                    </h2>
+
+                    <p>
+
+                        OptimaOS is an educational CPU scheduling
+                        simulator designed to make operating system
+                        scheduling concepts easier to understand
+                        through interactive process management,
+                        execution timelines, performance metrics
+                        and visual analytics.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HISTORY DETAILS MODAL
+             ================================================= -->
+
+        <div
+            class="modal-overlay"
+            id="historyModal"
+        >
+
+            <div class="history-modal">
+
+
+                <div class="modal-header">
+
+                    <div>
+
+                        <p class="section-kicker">
+                            SIMULATION RECORD
+                        </p>
+
+                        <h2 id="modalSimulationTitle">
+                            Simulation Details
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        class="modal-close"
+                        id="closeHistoryModal"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="modal-content"
+                    id="historyModalContent"
+                >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="footer">
+
+            <span>
+                OptimaOS CPU Scheduling Lab
+            </span>
+
+            <span>
+                Operating Systems Semester Project
+            </span>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+
+    <script src="js/scheduler.js"></script>
+
+    <script src="js/charts.js"></script>
+
+    <script src="js/history.js"></script>
+
+    <script src="js/app.js"></script>
+
+
+</body>
+
+</html>
